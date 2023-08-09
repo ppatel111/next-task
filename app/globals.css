@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Montserrat-Regular.ttf") format("truetype"); /* Adjust the path and format as needed */
+}
+
+body {
+  font-family: "Montserrat", sans-serif !important;
+  color: rgb(var(--foreground-rgb));
+  background: #000;
+  color: var(--ffffff, #fff);
+}
+
+.about-section {
+  transition: background 0.5s ease-in-out;
+  background: var(--background-start, #000);
+}
+
+.about-section:hover {
+  background: url("/static/images/about-bg.png");
+  transition: 0.5s;
+  background-size: cover;
+}
+
+.active-accordian,
+.slider-background {
+  background: var(
+    --gradient,
+    url("/static/images/accordian-bg.png"),
+    lightgray 50% / cover no-repeat
+  );
+}
+
+/* brand-slider */
+
+.logo-carousel {
+  display: flex;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+
+.slide img {
+  max-width: 100%;
+  height: auto;
+}
